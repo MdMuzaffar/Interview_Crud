@@ -1,0 +1,19 @@
+<div>
+    <input #name type="text">
+    <button for="name" (click)="add(name.value)">Add</button>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>Check Box</td>
+            <td>Name</td>
+            <td>Action</td>
+        </tr>
+        <tr *ngFor="let data of studentData">
+            <th><input type="checkbox"> </th>
+            <th> {{data.name}} </th>
+            <th> <button (click)="onDelete(data)">Delete</button></th>
+        </tr>
+    </table>
+</div>
