@@ -10,6 +10,8 @@ import { StudentService } from './service/student.service';
 export class AppComponent implements OnInit{
   title = 'interview_crud';
   studentData:any = [];
+
+  myValue:any = [];
   // myForm : FormGroup;
   constructor(private studentService:StudentService){}
 
