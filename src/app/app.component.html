@@ -1,6 +1,8 @@
 <div>
-    <input #name type="text">
-    <button for="name" (click)="add(name.value)">Add</button>
+    <form action="" [formGroup]="studentdata" (ngSubmit)="add()">
+        <input type="text" formControlName="name">
+        <button for="name" type="submit">Add</button>
+    </form>
 </div>
 <!-- <input #name [(ngModel)]="myValue" type="text" />
 <button (click)="add(name.value)">Click me</button> -->

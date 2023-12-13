@@ -1,6 +1,7 @@
 import { Component,OnInit} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { StudentService } from './service/student.service';
+import { FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +11,23 @@ import { StudentService } from './service/student.service';
 export class AppComponent implements OnInit{
   title = 'interview_crud';
   studentData:any = [];
-
   myValue:any = [];
-  // myForm : FormGroup;
-  constructor(private studentService:StudentService){}
+  studentdata: FormGroup | any;
+constructor(private studentService:StudentService){}
 
-ngOnInit(){}
+  
+  
+ngOnInit(){
+  this.studentdata = new  FormGroup({
+    name : new FormControl(''),
+  });
+}
 
-  add(data:any){
-    this.studentService.addStudent(data).subscribe(res => {
-      this.studentData = res;
-    } )
+  add(){
+    console.log(this.studentdata)
+    // this.studentService.addStudent().subscribe(res => {
+    //   this.studentData = res;
+    // } )
   }
 
   onDelete(data:any){
