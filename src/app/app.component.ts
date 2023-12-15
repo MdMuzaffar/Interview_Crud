@@ -25,9 +25,9 @@ ngOnInit(){
 
   add(){
     console.log(this.studentdata)
-    // this.studentService.addStudent().subscribe(res => {
-    //   this.studentData = res;
-    // } )
+    this.studentService.addStudent(this.studentData).subscribe(res => {
+      this.studentData = res;
+    } )
   }
 
   onDelete(data:any){
